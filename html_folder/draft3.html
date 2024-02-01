@@ -1,593 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
-    <link rel="stylesheet" href="../css_folder/cartpage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-       crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-       <style>
-              /* ||RESET */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-img{
-    display: block;
-}
-
-:root{
-    --BG-COLOR:  rgb(192, 193, 202);
-    --LIGHT-BG-COLOR: rgba(28, 194, 194, 0.324);
-    --FCOLOR:  rgba(60, 70, 105);
-}
-/* ||CLOSE RESET */
-
-
-/* ||HEADER */
-header{
-    height: 15vh;
-    padding: 5px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    color: black;
-    box-shadow: 1px 1px 10px 1px;
-    background: linear-gradient(
-        180deg,
-        white,
-        var(--BG-COLOR)
-        )
-    }
-    
-.top{
-    height: 60%;
-    display: flex;
-}
-
-.toggle-bar{
-    color: rgb(60, 70, 105);
-    width: 20px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
-
-.hidden{
-    display: none;
-    position: fixed;
-    left: 100px;
-    width: 200px;
-    background-color: red;
-    z-index: 2;
-}
-
-.toggle-bar i:hover{
-    transform: scale(1.5);
-    
-}
-
-.toggle-bar i:active{
-    transform: scale(1);
-}
-
-.logo{
-    height: 100%;
-    width: 55%;
-    margin-left: 1vw;
-    display: grid;
-    align-items: center;
-}
-
-.logo a {
-    width: 100%;
-    height: 7.5vh;
-    object-fit: fill;
-}
-
-.logo a img{
-    height: 7.4vh;
-    width: 80%;
-    max-width: 250px;
-
-}
-
-.others{
-    width: 42%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 5vw;
-}
-
-.others a{
-    color: rgb(60, 70, 105);
-}
-
-.others a:hover, .others a:active{
-    transform: scale(1.1); /* fornew */
-    transition: all 200ms linear;
-}
-
-.bottom{
-    height: 40%;
-    display: flex;
-}
-
-
-.search{
-    width: calc(100% - 14px);
-    display: flex;
-    justify-content: center;
-    height: min(100%, 32px);
-}
-
-
-.search span{
-    color: var(--FCOLOR);
-    background-color: rgba(255, 255, 255, 0.781);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    padding: 1.2px 0 0 5px;
-    border-radius: 5px 0 0 5px;
-}
-
-.search button{
-    border: none;
-    outline: none;
-    padding: 3px;
-    margin-left: 5px;
-    font-size: 12px;
-    font-weight: bolder;
-    border-radius: 5px;
-    color: var(--BG-COLOR);
-    background-color: var(--FCOLOR);
-}
-
-.search button:hover, .search button:active{
-    transform: scale(1.05);
-    transition: all 200ms linear; /* fornew */
-}
-
-input{
-    border-radius: 0 5px 5px 0;
-    outline: none;
-    border: none;
-    color:  rgb(24, 11, 24);
-    width: 50%;
-    padding-left: 7px;
-    background-color: rgba(255, 255, 255, 0.781);
-    text-overflow: ellipsis;
-}
-
-/* ||CLOSE HEADER */
-
-/* ||MAIN */
-main{
-    min-height: calc(100% - 15vh);
-    position: relative;
-    top: 15vh;
-    padding: max(5px, 2vw);
-    padding-bottom: 30vh;
-}
-
-.main-section{
-    display: flex;
-}
-
-/* ||CLOSE MAIN */
-main h2{
-    margin-bottom: 3vh;
-    color: var(--FCOLOR);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 1.5px;
-}
-
-.ppf{
-    display: flex;
-    flex-direction: column;
-    gap: max(5px, 3vh);
-}
-
-.prdt{
-    height: 30vh;
-    display: flex;
-    background-color: var(--LIGHT-BG-COLOR);
-    border-radius: 10px;
-}
-
-.prdt_pic{
-    width: 40%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    color: var(--FCOLOR);
-}
-
-.prdt_pic img{
-    width: 90%;
-    margin-inline: auto;
-}
-
-.desc{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-inline: max(5px, 3vw);
-}
-
-.desc p{
-    width: 100%;
-    height: 20%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    color: var(--FCOLOR);
-    background-color: var(--BG-COLOR);
-}
-
-.desc p:nth-child(2){
-    display: flex;
-}
-
-
-.desc p:last-child{
-    background-color: var(--FCOLOR);
-    color: var(--BG-COLOR);
-    width: 30%;
-}
-
-.desc input{
-    width: 100%;
-    height: 100%;
-    padding: 5px 10px;
-    background-color: var(--BG-COLOR);
-    border-radius: 5px;
-}
-
-.calc{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 3vh;
-}
-
-.calc p{
-    height: 7vh;
-    margin-block: 2vh;
-    color: var(--FCOLOR);
-    border-bottom: 2px solid var(--FCOLOR);
-    background-color: var(--BG-COLOR);
-    width: 30vw;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 5px;
-    padding-inline: 5px;
-}
-
-.crt{
-    font-weight: bolder;
-}
-
-
-
-
-/* ||FOOTER */
-footer{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color:  var(--FCOLOR);
-    position: relative;
-    bottom: 0;
-}
-
-.mainft{
-    color:  rgba(255, 255, 255, 0.781);
-    padding: 1vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:  2vw;
-    justify-content: space-between;
-}
-
-.socials{
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.socials a{
-    color: rgba(255, 255, 255, 0.781);
-}
-
-.contact{
-    display: flex;
-    flex-direction: column;
-}
-
-.contact a{
-    color: white;
-    text-decoration: none;
-}
-
-.ftft{
-    margin: 2vh 0;
-    color:  rgb(27, 151, 48);
-    text-align: center;
-}
-
-/* for new footer designs */
-
-.legal_pg{
-    color: var(--BG-COLOR);
-    text-decoration: none;
-}
-
-.about a:hover, .about a:active, .socials a:hover, .socials a:active{
-    font-weight: bolder;
-}
-
-.socials a:hover, .socials a:active{
-    transform: scale(1.1);
-}
-
-.contact a:hover, .contact a:active{
-    font-weight: bolder;
-}
-
-/* ||CLOSE FOOTER */
-
-
-@media screen and (max-width: 290px) {
-    main{
-        font-size: 14px;
+<style>
+    .photo {
+        display: flex;
+        align-items: center;
     }
 
-    h2{
-        font-size: initial;
+    .upload-section {
+        width: 30%;
+        text-align: center;
     }
 
-    .calc{
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .desc p:last-child{
-        font-size: 14px;
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 565px){
-    .search button{
-        display: none;
-    }
-
-    .search input{
-        width: 90%;
-    }
-
-    .categories{
-        display: none;
-    }
-
-    .product-display, .banner, .trough{
-        width: 100%;
-    }
-
-    .trough{
-        margin-inline: 0;
-        padding-inline: 5px;
-        overflow-x: hidden;
-    }
-    
-    .sales-pic{
-        width: 100%;
-    }
-
-    .sales-pic img{
-        width: 100%;
-    }
-
-    .product-card article{
-        margin: 0;
-        padding: 0 0 2px 2px;
-    }
-}
-
-@media screen and (max-width: 590px) {
-    .calc div{
+    #preview-section {
         width: 70%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-content: flex-start;
     }
 
-    .calc div p{
-        width: 100%;
-        white-space: nowrap;
+    #preview-section img {
+        max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 10px;
     }
-}
+</style>
 
-@media screen and (max-width: 1400px){
-    .product-card article{
-        padding: 0 0 5px 5px;
-    }
-}
-       </style>
-</head>
-<body>
-  <header>
-    <div class="top">
-      <div class="toggle-bar" onclick="toggleDropdown()" style="cursor: pointer">
-        <i class="fa-solid fa-bars" id="toggleButton"></i>
-        <!-- <i class="fa-solid fa-xmark"></i> -->
-        <ul id="list" class="hidden" style="position: absolute; top: 9vh; left: 20px; list-style-type: none; background-color: var(--BG-COLOR); color: var(--FCOLOR); width: 200px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 1px 1px var(--FCOLOR);" >
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); text-align: center; font-weight: bolder; padding: 5px 0;">Categories</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Toyota</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Lexus</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Honda</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Audi</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Acura</li>
-        </ul>
-      </div>
-      <div class="logo">
-        <a href="eas.homepage.html">
-          <img src="../img_folder/Logo_2.png" alt="" width="250px" height="37px">
-        </a>
-      </div>
-      <div class="others">
-        <a href="" style="display: none"><i class="fa-solid fa-cart-shopping"></i></a> 
-        <a href="profilepage.html"><i class="fa-solid fa-user"></i></a>
-      </div>
+<section class="photo">
+    <div class="upload-section">
+        <label for="photo" class="camera-label">
+            <i class="fa-solid fa-camera" style="font-size: 50px; color: var(--FCOLOR)"></i>
+        </label>
+        <input type="file" name="photo" id="photo" accept="image/*" capture="camera" style="display: none;" required multiple>
+
+        <label for="gallery" id="gall">
+            Choose from gallery
+        </label>
+        <input type="file" id="gallery" style="display: none;" required multiple>
     </div>
-    <div class="bottom">
-      <div class="search">
-          <span><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" placeholder="Search for products, categories and offers...">
-          <button>
-            search
-          </button>
-      </div>
-  </header>
 
-     <main>
-        <h2>My Cart</h2>
+    <div id="preview-section">
+        <!-- Image previews will be displayed here -->
+    </div>
+</section>
 
-        <section class="ppf">
-            <div class="prdt">
-                    <div class="prdt_pic">
-                        <img src="../img_folder/alternator lexus.jpg" alt="">
-                        <p class="name">Toyota Camry Gearbox</p>
-                    </div>
-                    <div class="desc">
-                        <p>Price/unit: N20,000</p>
-                        <p><label for="qty"></label><input type="number" id="qty" placeholder="Qty" min="0"></p>
-                        <p>Total: N40,000</p>
-                        <p>Remove</p>
-                    </div>
-            </div>
-            <div class="prdt">
-                    <div class="prdt_pic">
-                        <img src="../img_folder/alternator lexus.jpg" alt="">
-                        <p class="name">Toyota Camry Gearbox</p>
-                    </div>
-                    <div class="desc">
-                        <p>Price/unit: N20,000</p>
-                        <p><label for="qty"></label><input type="number" id="qty" placeholder="Qty" min="0"></p>
-                        <p>Total: N40,000</p>
-                        <p>Remove</p>
-                    </div>
-            </div>
-            <div class="prdt">
-                    <div class="prdt_pic">
-                        <img src="../img_folder/alternator lexus.jpg" alt="">
-                        <p class="name">Toyota Camry Gearbox</p>
-                    </div>
-                    <div class="desc">
-                        <p>Price/unit: N20,000</p>
-                        <p><label for="qty"></label><input type="number" id="qty" placeholder="Qty" min="0"></p>
-                        <p>Total: N40,000</p>
-                        <p>Remove</p>
-                    </div>
-            </div>
-        </section>
+<script>
+    document.getElementById('photo').addEventListener('change', handleFileSelect);
+    document.getElementById('gallery').addEventListener('change', handleFileSelect);
 
-        <section class="calc">
-            <div>
-                <p><span class="crt">Sub total:</span> N180,000</p>
-                <p><span class="crt">Usage value:</span> N120</p>
-                <p><span class="crt">VAT:</span> N11700</p>
-                <p><span class="crt">Shipping:</span> N1000</p>
-                <p><span class="crt">Grand Total:</span> N199,120</p>
+    const maxImages = 5;
+    let uploadedImages = 0;
 
-                <p style="
-                   display: grid;
-                   align-items: center;
-                   justify-content: center;
-                   border: none;
-                   background-color: var(--FCOLOR);
-                   color: var(--BG-COLOR);">PLACE ORDER</p>
-            </div>
-        </section>
-     </main>
+    function handleFileSelect(event) {
+        const fileInput = event.target;
+        const previewSection = document.getElementById('preview-section');
 
-     <footer>
-        <div class="mainft">
-          <div class="socials">
-            <p style="color: rgb(27, 151, 48);">Socials</p>
-            <a href="">
-              <p><i class="fa-brands fa-instagram"></i></p>
-            </a>
-            <a href="">
-              <p><i class="fa-brands fa-facebook"></i></p>
-            </a>
-            <a href="">
-              <p><i class="fa-brands fa-facebook-messenger"></i></p>
-            </a>
-            <a href="">
-              <p><i class="fa-brands fa-x-twitter"></i></p>
-            </a>
-            <a href="">
-              <p><i class="fa-brands fa-youtube"></i></p>
-            </a>
-            <a href="" style="text-decoration: none; font-size: 14px;">
-              <p class="blog">Our Blog</p>
-            </a>
-          </div>
-            <div class="contact">
-              <p style="color: rgb(27, 151, 48);">Contact</p>
-              <a href="">
-                <i class="fa-brands fa-whatsapp"></i> +(234) 802 496 3039
-              </a>
-              <a href="">
-                <i class="fa-solid fa-phone"></i> +(234) 814 6922 131
-              </a>
-            </div>
-            <div class="about">
-              <p style="color:  rgb(27, 151, 48);">About us</p>
-              <p>About <span style="font-style: italic; color: aqua;"><a href="fdgfg" class="legal_pg" style="color: var(--BG-COLOR);">e-autopartstore</a></span></p>
-              <p><a href="" class="legal_pg">Terms & Conditions</a></p>
-              <p><a href="" class="legal_pg">Privacy Policy</a></p>
-              <p><a href="" class="legal_pg">Billing Policy</a></p>
-              <p><a href="" class="legal_pg">Cookie Policy</a></p>
-              <p><a href="" class="legal_pg">Copyright Infringement Policy</a></p> 
-            </div>
-          </div> 
-          <div class="ftft">
-            <p><em>@2024 e-autopartstore</em></p>
-          </div>
-     </footer>
+        while (previewSection.firstChild) {
+            previewSection.removeChild(previewSection.firstChild);
+        }
 
-     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      var button = document.getElementById("toggleButton");
-      var list = document.getElementById("list");
-  
-      button.addEventListener("click", function () {
-          list.classList.toggle("hidden");
-        });
-      });
+        const files = fileInput.files;
 
-       //Toggle Dropdown
-       function toggleDropdown() {
-    var toggleButton = document.getElementById('toggleButton');
-    var list = document.getElementById('list');
+        if (files) {
+            for (let i = 0; i < files.length && uploadedImages < maxImages; i++) {
+                const reader = new FileReader();
 
-    // Toggle between bars and x icons
-    toggleButton.classList.toggle('fa-bars');
-    toggleButton.classList.toggle('fa-times');
-  }
-  </script>
-</body>
-</html>
+                reader.onload = function (e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    previewSection.appendChild(img);
+                };
+
+                reader.readAsDataURL(files[i]);
+                uploadedImages++;
+            }
+        }
+        
+        // Reset the file input to clear previously selected files
+        fileInput.value = '';
+    }
+</script>
+
+
+document.getElementById('photo').addEventListener('change', handleFileSelect);
+document.getElementById('gallery').addEventListener('change', handleFileSelect);
+
+const maxImages = 5;
+
+function handleFileSelect(event) {
+    const fileInput = event.target;
+    const previewSection = document.getElementById('preview-section');
+
+    while (previewSection.firstChild) {
+        previewSection.removeChild(previewSection.firstChild);
+    }
+
+    const files = fileInput.files;
+
+    if (files) {
+        for (let i = 0; i < files.length && i < maxImages; i++) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                previewSection.appendChild(img);
+            };
+
+            reader.readAsDataURL(files[i]);
+        }
+    }
+    
+    // Reset the file input to clear previously selected files
+    fileInput.value = '';
+}
