@@ -163,6 +163,7 @@ input{
     width: 50%;
     padding-left: 7px;
     background-color: rgba(255, 255, 255, 0.781);
+    text-overflow: ellipsis;
 }
 
 /* ||CLOSE HEADER */
@@ -207,6 +208,10 @@ main{
     font-size: 20px
 }
 
+
+#banner{
+    transition: opacity 1s ease-in-out;
+}
 /*|| PRODUCT CARD */
 
 .pd_cd{

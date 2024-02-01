@@ -74,13 +74,13 @@
   </header>
 <main>
     <section class="top-ad">
-       <img src="../img_folder/AutoPartsBanner.jpg" alt="">
+       <img id="banner" src="../img_folder/AutoPartsBanner.jpg" alt="banner">
      </section>
 
     <section class="trough Toyota">
       <div class="brand-logo">
         <a href="../html_folder/toyota.homepage.html" class="b-pagelink">
-            <img class="b-logo" src="../img_folder/toyota_icon.png" alt="">
+            <img class="b-logo" src="../img_folder/toyota_logo.png.png" alt="">
             <p class="name">TOYOTA</p>
         </a>
       </div>
@@ -182,7 +182,7 @@
     <section class="trough Lexus">
         <div class="brand-logo">
             <a href="lexus.homepage.html" class="b-pagelink">
-              <img src="../img_folder/lexus.home.logo.png" alt="" class="b-logo">
+              <img src="../img_folder/LEXUS_LOGO.jpg" alt="" class="b-logo">
               <p class="name">LEXUS</p>
             </a>
         </div>
@@ -348,7 +348,7 @@
     <section class="trough ford">
         <div class="brand-logo">
             <a href="ford.homepage.html" class="b-pagelink">
-              <img src="" alt="Ford logo" class="b-logo">
+              <img src="../img_folder/ford_logo.png" alt="Ford logo" class="b-logo">
               <p class="name">FORD</p>
             </a>
         </div>
@@ -514,7 +514,7 @@
     <section class="trough Volkswagen">
     <div class="brand-logo">
         <a href="volkswagen.homepage.html" class="b-pagelink">
-          <img src="" alt="Volkswagen logo" class="b-logo">
+          <img src="../img_folder/Volkswagen_logo1.jpeg" alt="Volkswagen logo" class="b-logo">
           <p class="name">VOLKSWAGEN</p>
         </a>
     </div>
@@ -1059,53 +1059,9 @@
     </div>
 </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    var button = document.getElementById("toggleButton");
-    var list = document.getElementById("list");
 
-    button.addEventListener("click", function () {
-        list.classList.toggle("hidden");
-    });
-    });
+<script src="../javaScript_folder/eas.homepage.js"></script>
 
-    //Back to top scroll button
-    document.addEventListener("DOMContentLoaded", function() {
-        const backToTopBtn = document.getElementById("backToTopBtn");
-
-        window.addEventListener("scroll", function() {
-          const viewportHeight = window.innerHeight;
-          const scrollPosition = window.scrollY;
-
-          if (scrollPosition > viewportHeight) {
-            backToTopBtn.style.display = "block";
-          } else {
-            backToTopBtn.style.display = "none";
-          }
-        });
-         backToTopBtn.addEventListener("click", function() {
-          window.scrollTo({ top: 0, behavior: "smooth"});
-        });
-      });
-
-    //Toggle Dropdown
-    function toggleDropdown() {
-    var toggleButton = document.getElementById('toggleButton');
-    var list = document.getElementById('list');
-
-    // Toggle between bars and x icons
-    toggleButton.classList.toggle('fa-bars');
-    toggleButton.classList.toggle('fa-times');
-  }
-
-  //from a dropdown to a link
-  function navigateToLink(){
-    const selectedValue = document.getElementById("brandsdrpdwn").value;
-    if (selectedValue !== "#") {
-      window.location.href = selectedValue;
-    }
-  }
-</script>
 
 </body>
 </html>
