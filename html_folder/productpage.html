@@ -12,26 +12,26 @@
 <body>
   <header>
     <div class="top">
-      <div class="toggle-bar" onclick="toggleDropdown()" style="cursor: pointer">
-        <i class="fa-solid fa-bars" id="toggleButton"></i>
-        <!-- <i class="fa-solid fa-xmark"></i> -->
-        <ul id="list" class="hidden" style="position: absolute; top: 9vh; left: 20px; list-style-type: none; background-color: var(--BG-COLOR); color: var(--FCOLOR); width: 200px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 1px 1px var(--FCOLOR);" >
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); text-align: center; font-weight: bolder; padding: 5px 0;">Categories</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Toyota</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Lexus</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Honda</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Audi</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Acura</li>
-        </ul>
-      </div>
       <div class="logo">
         <a href="eas.homepage.html">
           <img src="../img_folder/Logo_2.png" alt="eas logo" width="250px" height="37px">
         </a>
       </div>
       <div class="others">
-        <a href="cartpage.html"><i class="fa-solid fa-cart-shopping"></i></a> 
+        <a href="cartpage.html" style="display: none;"><i class="fa-solid fa-cart-shopping"></i></a> 
         <a href="profilepage.html"><i class="fa-solid fa-user"></i></a>
+        <div class="toggle-bar" onclick="toggleDropdown()" style="cursor: pointer">
+          <i class="fa-solid fa-bars" id="toggleButton"></i>
+          <!-- <i class="fa-solid fa-xmark"></i> -->
+          <ul id="list" class="hidden" style="position: absolute; top: 9vh; left: 20px; list-style-type: none; background-color: var(--BG-COLOR); color: var(--FCOLOR); width: 200px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 1px 1px var(--FCOLOR);" >
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); text-align: center; font-weight: bolder; padding: 5px 0;">Categories</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Toyota</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Lexus</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Honda</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Audi</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Acura</li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="bottom">
@@ -65,12 +65,17 @@
       </div>
 
       <div class="or_btn">
-        <div class="qty">
+        <div class="qty" style="display: none;">
           <span id="sp_qty">QTY:</span>
           <input type="number" id="quantity" min="0">
         </div>
-        <button id="order1">Add to cart</button>
-        <button id="order2" href="">Place Order</button>
+        <button id="order1" style="display: none;">Add to cart</button>
+        <button id="order2" href="" style="display: none;">Place Order</button>
+            <div class="contact_top">
+                <a href="sellers whatsapp contact" style="color: var(--FCOLOR);"><img src="../img_folder/whatsapp_icon.png" alt="Whatsapp" width="40px" height="40px"> <span class="nmbr">+(234) 804 037 2689</span></a>
+                <a href="" style="color: var(--FCOLOR);"><i class="fa-solid fa-phone-volume"></i><span class="nmbr">+(234) 703 696 6785</span></a>
+                <a href="" id="msg"><i class="fa-solid fa-message"></i><span class="nmbr">Message</span></a>
+            </div>
       </div>
     </section>
 

@@ -38,14 +38,12 @@ header{
 .top{
     height: 60%;
     display: flex;
+    justify-content: space-between;
 }
 
 .toggle-bar{
     color: rgb(60, 70, 105);
     width: 20px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
 }
 
 
@@ -61,11 +59,12 @@ header{
 
 .toggle-bar i:hover{
     transform: scale(1.5);
-    
+    transition: all 200ms linear;
 }
 
 .toggle-bar i:active{
-    transform: scale(1);
+    transform: scale(1.5);
+    transition: all 200ms linear;
 }
 
 .logo{
@@ -94,6 +93,7 @@ header{
     display: flex;
     justify-content: flex-end;
     gap: 5vw;
+    padding-top: 2vh
 }
 
 .others a{
@@ -279,6 +279,66 @@ main{
     font-weight: bolder;
 }
 
+.contact_top{
+    box-shadow: 1px 1px 3px 1px;
+    height: fit-content;
+    color: var(--FCOLOR);
+    padding: 10px 5px;
+    background-color: rgba(194, 194, 194, 0.479);
+    margin: 4vh 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vh;
+    padding-top: auto;
+}
+
+.contact_top a{
+    padding-top: auto;
+    color: var(--FCOLOR);
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-inline: 2vw;
+    height: 8vh;
+    display: flex;
+    text-decoration: none;
+}
+
+.contact_top a:hover, .contact a:active{
+    transform: scaleY(1.2);
+    transition: all 200ms ease-in-out;
+}
+
+.contact_top a img{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contact_top i{
+    font-size: 25px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_top .nmbr{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 3vw;
+}
+
+#msg{
+    width: 40%;
+    margin-inline: auto;
+    padding-inline: 10%;
+}
+
+#msg .nmbr{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 3vw;
+}
+
 .recommended{
     margin: 5vh 0;
 }
@@ -294,7 +354,7 @@ main{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1vw;
+    gap: 2vw;
     padding: 3vw;
 }
 
@@ -484,10 +544,9 @@ footer{
 
     .partshow{
         margin-top: 10px;
-        gap: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: 1vw;
+        gap: 5vw;
         padding: 0;
     }
 
@@ -512,6 +571,16 @@ footer{
    #order{
     font-size: 16px;
    }
+}
+
+@media screen and (max-width: 565px) {
+    .search button{
+        display: none;
+    }
+
+    .search input{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 670px){
