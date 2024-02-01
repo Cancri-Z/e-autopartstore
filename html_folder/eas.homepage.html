@@ -12,26 +12,52 @@
 <body>
   <header>
     <div class="top">
-      <div class="toggle-bar" onclick="toggleDropdown()" style="cursor: pointer">
-        <i class="fa-solid fa-bars" id="toggleButton"></i>
-        <!-- <i class="fa-solid fa-xmark"></i> -->
-        <ul id="list" class="hidden" style="position: absolute; top: 9vh; left: 20px; list-style-type: none; background-color: var(--BG-COLOR); color: var(--FCOLOR); width: 200px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 1px 1px var(--FCOLOR);" >
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); text-align: center; font-weight: bolder; padding: 5px 0;">Categories</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Toyota</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Lexus</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Honda</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Audi</li>
-          <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Acura</li>
-        </ul>
-      </div>
       <div class="logo">
         <a href="">
           <img src="../img_folder/Logo_2.png" alt="" width="250px" height="37px">
         </a>
       </div>
       <div class="others">
-        <a href="cartpage.html"><i class="fa-solid fa-cart-shopping"></i></a> 
-        <a href="profilepage.html"><i class="fa-solid fa-user"></i></a>
+        <a href="" title="inbox"><i class="fa-solid fa-message"></i></a>
+        <a href="../html_folder/sell.html" title="sell on e-autopartstore"><i class="fa-solid fa-store"></i></a>
+        <a href="cartpage.html" title="cart" style="display: none"><i class="fa-solid fa-cart-shopping"></i></a> 
+        <a href="profilepage.html" title="Account"><i class="fa-solid fa-user"></i></a>
+        <div class="toggle-bar" onclick="toggleDropdown()" style="cursor: pointer">
+          <i class="fa-solid fa-bars" id="toggleButton"></i>
+          <!-- <i class="fa-solid fa-xmark"></i> -->
+          <ul id="list" class="hidden" style="position: absolute; top: 9vh; right: 20px; list-style-type: none; background-color: var(--BG-COLOR); color: var(--FCOLOR); width: 250px; padding: 10px; border-radius: 5px; box-shadow: 1px 1px 1px 1px var(--FCOLOR);" >
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">
+              <select name="profile" id="profiledrpdwn" class="toggle-select" onchange="navigateToLink()">
+                <option value="#" selected disabled>Account</option>
+                <option value="register_page.html">Profile</option>
+                <option value="">Inbox</option>
+              </select>
+            </li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">
+                  <select name="brandsdrpdwn" id="brandsdrpdwn" class="toggle-select" onchange="navigateToLink()">
+                      <option value="#" selected disabled>Brands</option>
+                      <option value="html_folder/audi.homepage.html">Audi</option>
+                      <option value="bmw.homepage.html">BMW</option>
+                      <option value="cheverolet.homepage.html">Chevrolet</option>
+                      <option value="toyota.homepage.html">Toyota</option>
+                  </select>
+            </li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">
+                      <i class="fa-solid fa-bell"></i>
+                      <span>Notification</span>
+            </li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Help & support</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">FAQ</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Blog</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">Contact Us</li>
+            <li style="text-align: center; border-bottom: 1px solid var(--LIGHT-BG-COLOR); padding: 5px 0;">
+              <a href="login_page.html" target="_blank" style="text-decoration: none;">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="bottom">
@@ -1070,6 +1096,14 @@
     // Toggle between bars and x icons
     toggleButton.classList.toggle('fa-bars');
     toggleButton.classList.toggle('fa-times');
+  }
+
+  //from a dropdown to a link
+  function navigateToLink(){
+    const selectedValue = document.getElementById("brandsdrpdwn").value;
+    if (selectedValue !== "#") {
+      window.location.href = selectedValue;
+    }
   }
 </script>
 

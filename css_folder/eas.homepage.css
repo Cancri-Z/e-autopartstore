@@ -38,14 +38,25 @@ header{
 .top{
     height: 60%;
     display: flex;
+    justify-content: space-between; /* new */
 }
 
 .toggle-bar{
     color: rgb(60, 70, 105);
     width: 20px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+}
+
+.toggle-select{
+    text-align: center;
+    border: none;
+    font-size: 1rem;
+    color: var(--FCOLOR);
+    background-color: var(--BG-COLOR);
+    font-weight: 400;
+    appearance: none;
+    text-overflow: '';
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
 
@@ -53,19 +64,19 @@ header{
 .hidden{
     display: none;
     position: fixed;
-    left: 100px;
-    width: 200px;
-    background-color: red;
+    right: 0;
+    width: fit-content;
     z-index: 2;
 }
 
 .toggle-bar i:hover{
     transform: scale(1.5);
-    
+    transition: all 500ms ease-in-out;
 }
 
 .toggle-bar i:active{
     transform: scale(1);
+    transition: all 500ms ease-in-out;
 }
 
 .logo{
@@ -92,7 +103,8 @@ header{
     width: 42%;
     display: flex;
     justify-content: flex-end;
-    gap: 5vw;
+    gap: 3vw; /* new */
+    padding-top: 2vh; /* new */
 }
 
 .others a{
@@ -283,15 +295,26 @@ main{
     color: var(--FCOLOR); 
 }
 
-.trough .b-logo{
-    width: 30px;
-}
-
 .trough .brand-logo a{
     display: flex;
     gap: 2px;
     text-decoration: none;
     color: rgb(24, 11, 24);
+    height: 100%; /* new */
+}
+
+.brand-logo{
+    height: 5vh; /* new */
+}
+
+.brand-logo img{
+    width: 30px;
+    height: 100%;
+}
+
+.brand-logo a p{
+    margin-top: auto; /* new */
+    margin-bottom: auto; /* new */
 }
 
 .hrsc{
@@ -388,6 +411,10 @@ footer{
 }
 
 @media screen and (max-width: 565px){
+    .others{
+        gap: 7vw;
+    }
+
     .search button{
         display: none;
     }
@@ -437,6 +464,16 @@ footer{
     .product-card article{
         margin: 0;
         padding: 0 0 2px 2px;
+    }
+
+    .top-ad{
+        height: 20vh;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .top-ad{
+        height: 15vh;
     }
 }
 
